@@ -1,0 +1,64 @@
+{
+  "name": "happy-farmer-client",
+  "version": "1.0.0",
+  "description": "Something runs on Backbone",
+  "main": "index.js",
+  "standard": {
+    "ignore": [
+      "./build/**/*"
+    ]
+  },
+  "author": "Dmitrii Lapshukov <lapshukov@gmail.com>",
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint",
+    "test": "karma start ./config/karma.js",
+    "test-ci": "npm run test -- --single-run=false",
+    "clear": "rm -rf build",
+    "copy-dependencies": "./tasks/copy-dependencies.sh",
+    "copy-app-config": "./tasks/copy-app-config.sh",
+    "compile-templates": "./tasks/compile-templates.sh",
+    "watch-templates": "sane 'npm run compile-templates' ./src/templates --glob=**/*.hbs",
+    "compile-styles": "./tasks/compile-styles.sh",
+    "watch-styles": "sane 'npm run compile-styles' ./src/styles --glob='**/*.scss'",
+    "compile-scripts": "./tasks/compile-scripts.sh",
+    "watch-scripts": "sane 'npm run compile-scripts' ./src/scripts --glob=**/*.js",
+    "build-index": "./tasks/build-index.js",
+    "optimize": "./tasks/optimize.sh",
+    "build": "./tasks/build.sh",
+    "docs-styles": "sassdoc ./src/styles/**/*.scss -d ./docs/styles",
+    "docs-scripts": "bash ./tasks/docs-scripts.sh",
+    "docs": "npm run docs-styles & npm run docs-scripts"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "6.3.6",
+    "babel-cli": "6.7.7",
+    "babel-polyfill": "6.7.4",
+    "babel-preset-es2015-without-strict": "0.0.2",
+    "backbone.marionette": "2.4.5",
+    "backbone.marionette.subrouter": "0.0.6",
+    "backbone.subroute": "0.4.6",
+    "chai": "3.5.0",
+    "handlebars": "4.0.5",
+    "jquery": "2.2.3",
+    "karma": "0.13.22",
+    "karma-babel-preprocessor": "6.0.1",
+    "karma-chai": "0.1.0",
+    "karma-mocha": "1.0.1",
+    "karma-phantomjs-launcher": "1.0.0",
+    "karma-requirejs": "1.0.0",
+    "lodash-cli": "4.12.0",
+    "mocha": "2.4.5",
+    "node-sass": "3.4.2",
+    "phantomjs-prebuilt": "2.1.7",
+    "postcss-cli": "2.5.1",
+    "requirejs": "2.1.22",
+    "standard": "6.0.8"
+  },
+  "devDependencies": {
+    "jsdoc": "3.4.0",
+    "sane": "1.3.4",
+    "sassdoc": "2.1.20"
+  }
+}

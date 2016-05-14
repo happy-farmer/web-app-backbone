@@ -1,0 +1,19 @@
+<form>
+    <label>
+        Name: <input name="name" value="{{name}}" />
+    </label>
+    <fieldset>
+        <label>
+            State: <input name="location.state" value="{{location.state}}" />
+        </label>
+        <label>
+            City: <input name="location.city" value="{{location.city}}" />
+        </label>
+        <label>
+            Street Address: <input name="location.street-address" value="{{location.street-address}}" />
+        </label>
+    </fieldset>
+    <input name="_id" hidden value="{{_id}}" />
+    <button name="send" type="submit">Send</button>
+    <a href="#/markets/{{_id}}">cancel</a>
+</form>
