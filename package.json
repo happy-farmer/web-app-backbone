@@ -17,6 +17,8 @@
     "clear": "rm -rf build",
     "copy-dependencies": "./tasks/copy-dependencies.sh",
     "copy-app-config": "./tasks/copy-app-config.sh",
+    "link-assets": "ln -s ../src/assets/ ./build",
+    "unlink-assets": "rm -rf ./build/assets",
     "compile-templates": "./tasks/compile-templates.sh",
     "watch-templates": "sane 'npm run compile-templates' ./src/templates --glob=**/*.hbs",
     "compile-styles": "./tasks/compile-styles.sh",
