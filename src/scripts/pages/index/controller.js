@@ -5,20 +5,18 @@
 
 /* global define */
 define((require) => {
-  var MarketView = require('views/MarketView')
-  var Mt = require('marionette')
+  var MarketListView = require('views/MarketListView')
   var MarketsCollection = require('collections/MarketsCollection')
 
   return (main) => {
     var marketsCollection = new MarketsCollection()
-    var ListView = Mt.CollectionView.extend({
-      collection: marketsCollection,
-      childView: MarketView
+    var listView = new MarketListView({
+      collection: marketsCollection
     })
     marketsCollection
       .fetch()
       .then(() => {
-        main.show(new ListView())
+        main.show(listView)
       })
   }
 })
