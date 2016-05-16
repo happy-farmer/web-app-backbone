@@ -17,6 +17,7 @@
     "clear": "rm -rf build",
     "copy-dependencies": "./tasks/copy-dependencies.sh",
     "copy-app-config": "./tasks/copy-app-config.sh",
+    "copy-assets": "cp ./src/assets/ ./build",
     "link-assets": "ln -s ../src/assets/ ./build",
     "unlink-assets": "rm -rf ./build/assets",
     "compile-templates": "./tasks/compile-templates.sh",
