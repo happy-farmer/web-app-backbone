@@ -10,17 +10,33 @@ define((require) => {
   return (region) => {
     var IndexRoute = SubRoute.extend({
       routes: {
-        ':id': 'index',
-        ':id/edit': 'edit'
+        'add': 'create',
+        ':id/edit': 'update',
+        ':id': 'index'
       },
       index (id) {
         require(['pages/markets/controller'], (controller) => {
           controller(region.main, id)
         })
       },
-      edit (id) {
+      update (id) {
         require(['pages/markets/controllerEdit'], (controller) => {
-          controller(region.main, id)
+          var success = () => this.navigate(id, {trigger: true})
+          var options = {
+            id,
+            success,
+            save: {patch: true}
+          }
+          controller(region.main, options)
+        })
+      },
+      create () {
+        require(['pages/markets/controllerAdd'], (controller) => {
+          var success = () => this.navigate('', {trigger: true})
+          controller(region.main, {
+            success,
+            save: {create: true}
+          })
         })
       }
     })
