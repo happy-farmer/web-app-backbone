@@ -28,6 +28,18 @@
     {
       name: 'pages/markets/controller',
       exclude: ['bootstrap']
+    },
+    {
+      name: 'pages/markets/controllerAdd',
+      exclude: ['bootstrap']
+    },
+    {
+      name: 'pages/markets/controllerEdit',
+      exclude: ['bootstrap']
+    },
+    {
+      name: 'pages/markets/controllerDelete',
+      exclude: ['bootstrap']
     }
   ],
   fileExclusionRegExp: /^\.|LICENSE|\.(coffee|gemspec|less|map|md|nuspec|rb|scss|txt|yml|hbs)$/,
