@@ -13,7 +13,9 @@
             Street Address: <input name="location.street-address" value="{{location.street-address}}" />
         </label>
     </fieldset>
-    <input name="_id" hidden value="{{_id}}" />
+    {{#if id}}
+        <input name="id" hidden value="{{id}}" />
+    {{/if}}
     <button name="send" type="submit">Send</button>
-    <a href="#/markets/{{_id}}">cancel</a>
+    <a href="#/markets/{{id}}">cancel</a>
 </form>
