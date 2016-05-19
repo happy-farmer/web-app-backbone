@@ -12,7 +12,7 @@ define((require) => {
       routes: {
         '': 'index',
         'add': 'create',
-        ':id/edit': 'update',
+        'edit/:id': 'update',
         ':id': 'item'
       },
       index () {
