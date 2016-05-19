@@ -1,5 +1,5 @@
 /*
- * @module views/MarketDetailEditView
+ * @module views/market/MarketDetailEditView
  */
 
  /* global define */

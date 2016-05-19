@@ -5,7 +5,7 @@
 
 /* global define */
 define((require) => {
-  var MarketView = require('views/MarketDetailSaveView')
+  var MarketView = require('views/market/MarketDetailSaveView')
   var MarketModel = require('models/MarketModel')
 
   return (main, options) => {
