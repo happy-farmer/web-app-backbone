@@ -5,16 +5,16 @@
 
 /* global define */
 define((require) => {
-  var MarketView = require('views/market/MarketDetailView')
-  var MarketModel = require('models/MarketModel')
+  var View = require('views/market/MarketDetailView')
+  var Model = require('models/MarketModel')
 
   return (main, id) => {
-    var marketModel = new MarketModel({id})
-    marketModel
+    var model = new Model({id})
+    model
       .fetch()
       .then(() => {
-        main.show(new MarketView({
-          model: marketModel
+        main.show(new View({
+          model
         }))
       })
   }

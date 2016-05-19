@@ -5,22 +5,22 @@
 
 /* global define */
 define((require) => {
-  var MarketView = require('views/market/MarketDetailSaveView')
-  var MarketModel = require('models/MarketModel')
+  var View = require('views/market/MarketDetailSaveView')
+  var Model = require('models/MarketModel')
 
   return (main, options) => {
     var id = options.id
     var save = options.save
-    var marketModel = new MarketModel({id})
-    var marketView = new MarketView({
-      model: marketModel,
+    var model = new Model({id})
+    var view = new View({
+      model,
       save
     })
-    marketModel
+    model
       .fetch()
       .then(() => {
-        main.show(marketView)
-        marketModel.once('sync', options.success)
+        main.show(view)
+        model.once('sync', options.success)
       })
   }
 })

@@ -8,7 +8,7 @@ define((require) => {
   var SubRoute = require('subroute')
 
   return (region) => {
-    var IndexRoute = SubRoute.extend({
+    var Route = SubRoute.extend({
       routes: {
         'add': 'create',
         ':id/edit': 'update',
@@ -41,6 +41,6 @@ define((require) => {
       }
     })
 
-    return new IndexRoute('markets', {createTrailingSlashRoutes: true})
+    return new Route('markets', {createTrailingSlashRoutes: true})
   }
 })
