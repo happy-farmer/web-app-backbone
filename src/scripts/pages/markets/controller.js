@@ -1,21 +1,22 @@
 /**
  * @module pages/markets/controller
- * @description markets route controller
+ * @description markets index route controller
  */
 
 /* global define */
 define((require) => {
-  var View = require('views/market/MarketDetailView')
-  var Model = require('models/MarketModel')
+  var ListView = require('views/market/MarketListView')
+  var Collection = require('collections/MarketsCollection')
 
-  return (main, id) => {
-    var model = new Model({id})
-    model
+  return (main) => {
+    var collection = new Collection()
+    var listView = new ListView({
+      collection
+    })
+    collection
       .fetch()
       .then(() => {
-        main.show(new View({
-          model
-        }))
+        main.show(listView)
       })
   }
 })

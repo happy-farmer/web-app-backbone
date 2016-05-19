@@ -10,12 +10,18 @@ define((require) => {
   return (region) => {
     var Route = SubRoute.extend({
       routes: {
+        '': 'index',
         'add': 'create',
         ':id/edit': 'update',
-        ':id': 'index'
+        ':id': 'item'
       },
-      index (id) {
+      index () {
         require(['pages/farms/controller'], (controller) => {
+          controller(region.main)
+        })
+      },
+      item (id) {
+        require(['pages/farms/controllerItem'], (controller) => {
           controller(region.main, id)
         })
       },
