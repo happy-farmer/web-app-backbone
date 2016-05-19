@@ -19,6 +19,7 @@ define((reqire) => {
 
     var indexRoute = require('pages/index/route')
     var marketsRoute = require('pages/markets/route')
+    var farmsRoute = require('pages/farms/route')
 
     rootRegion.on('before:show', (region) => {
       region.header.show(headerView)
@@ -29,6 +30,7 @@ define((reqire) => {
         initialize: function () {
           this.index = indexRoute(region)
           this.markets = marketsRoute(region)
+          this.farms = farmsRoute(region)
         }
       })
       var router = new Router()
