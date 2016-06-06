@@ -8,8 +8,20 @@ define((require) => {
   'use strict'
   var template = require('mixins/templates').header
   var Mt = require('marionette')
+  var appConfig = require('app-config')
+  var authUri = appConfig.authUri
 
   return Mt.ItemView.extend({
-    template
+    template,
+    connectSocial (button) {
+      button.click(() => {
+        let provider = button.data('provider')
+        document.location = `${authUri}/${provider}/connect`
+      })
+    },
+    onRender () {
+      let facebook = this.$el.find('[data-provider=facebook]')
+      this.connectSocial(facebook)
+    }
   })
 })
