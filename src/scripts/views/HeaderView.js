@@ -21,7 +21,9 @@ define((require) => {
     },
     onRender () {
       let facebook = this.$el.find('[data-provider=facebook]')
+      let twitter = this.$el.find('[data-provider=twitter]')
       this.connectSocial(facebook)
+      this.connectSocial(twitter)
     }
   })
 })
