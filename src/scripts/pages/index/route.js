@@ -10,7 +10,8 @@ define((require) => {
   return (region) => {
     var IndexRoute = SubRoute.extend({
       routes: {
-        '': 'index'
+        '': 'index',
+        'index': 'index'
       },
       index () {
         require(['pages/index/controller'], (controller) => {
