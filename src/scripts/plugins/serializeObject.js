@@ -5,7 +5,6 @@
 
 /* global define */
 define(function (require) {
-  var _ = require('underscore')
   var $ = require('jquery')
   var set = require('lodash/set')
 
@@ -13,7 +12,7 @@ define(function (require) {
     var sdata = $(this).serializeArray()
     var data = {}
 
-    _.each(sdata, function (el) {
+    $.each(sdata, function (ix, el) {
       set(data, el.name, el.value)
     })
 
