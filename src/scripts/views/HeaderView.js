@@ -6,8 +6,9 @@
 
 define((require) => {
   'use strict'
-  var template = require('mixins/templates').header
+  var $ = require('jquery')
   var Mt = require('marionette')
+  var template = require('mixins/templates').header
   var appConfig = require('app-config')
   var authUri = appConfig.authUri
 
@@ -20,10 +21,9 @@ define((require) => {
       })
     },
     onRender () {
-      let facebook = this.$el.find('[data-provider=facebook]')
-      let twitter = this.$el.find('[data-provider=twitter]')
-      this.connectSocial(facebook)
-      this.connectSocial(twitter)
+      this.$el.find('[data-provider]').each((ix, el) => {
+        this.connectSocial($(el))
+      })
     }
   })
 })
